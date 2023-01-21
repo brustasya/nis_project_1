@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Приложение для путешествий</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../lib.js" defer></script>
+    <script src="app.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Приложение для путешественников</h1>
+    <!--<details>
+      <summary>Аннотация</summary>
+      <p><b>Назначение:</b><br>
+      &emsp;Планирование путешествий (сбор вещей, запись достопримечательностей). Сохранение лучших фотографий поздки.<br>
+      <b>Целевая аудитория:</b><br>
+      &emsp;Люди, любящие путешествовать и планировать свои поездки заранее.</p>
+    </details>
+    <details>
+      <summary>Варианты использования</summary>
+      <img src="use-case.png"  width="1000" height="500" alt="Диаграмма вариантов использования приложения">
+    </details>
+    <details>
+      <summary>Сценарии использования</summary>
+      <p><strong>П</strong> &ndash; пользователь.
+         <br>
+         <strong>ВП</strong> &ndash; wеб-приложение.</p>
+	  <p><strong>Ввод названия поездки</strong></p>
+      <ol id="c1">
+        <li><b>П</b> переходит в раздел для ввода названия поездки.</li>
+        <li><b>ВП</b> отображает раздел для ввода названия поездки.</li>
+        <li><b>П</b> вводит/корректирует название поездки.</li>
+        <li><b>П</b> нажимает «Сохранить».</li>
+        <li><b>ВП</b> сохраняет название поездки.</li>
+      </ol>
+      <p><strong>Работа со списком вещей</strong></p>
+      <ol id="c1">
+        <li><b>П</b> переходит в раздел для работы со списком вещей.</li>
+        <li><b>ВП</b> отображает раздел для работы со списком вещей.</li>
+        <li><b>П</b> вводит/корректирует содержимое списка вещей.</li>
+        <li><b>П</b> нажимает «Сохранить».</li>
+        <li><b>ВП</b> сохраняет список вещей.</li>
+      </ol>
+      <p><strong>Просмотр списка вещей</strong></p>
+      <ol id="c4">
+        <li><b>П</b> нажимает «Отобразить список вещей».</li>
+        <li><b>ВП</b> отображает список вещей.</li>
+        <li>[<b>П</b> нажимает «Скрыть список вещей».]</li>
+        <li>[<b>ВП</b> скрывает список вещей.]</li>
+      </ol>
+      <p><strong>Установка у вещи отметки «Собрал»</strong></p>
+      <ol id="c5">
+        <li><b>П</b> Видит вещь, которую необходимо собрать.</li>
+        <li><b>П</b> нажимает «Собрал» для данной вещи.</li>
+        <li><b>ВП</b> скрывает вещь из списка вещей.</li>
+      </ol>
+      <p><strong>Сброс отметки «Собрал» у всех вещей</strong></p>
+      <ol id="c6">
+        <li><b>П</b> нажимает «Снять отметку «Собрал» у всех вещей».</li>
+        <li><b>ВП</b> запрашивает подтверждение на снятие отметки «Собрал» со всех вещей.</li>
+        <li><b>П</b> нажимает «Ок».</li>
+        <li><b>ВП</b> снимает отметку «Собрал» со всех вещей.</li>
+        <li><b>ВП</b> отображает список всех несобранных вещей.</li>
+      </ol>
+      <p><strong>Просмотр статистики</strong></p>
+      <ol id="c9">
+        <li><b>П</b> нажимает «Отобразить список вещей».</li>
+        <li><b>ВП</b> отображает общее количество вещей.</li>
+        <li><b>ВП</b> отображает количество собранных вещей.</li>
+        <li><b>ВП</b> отображает количество несобранных вещей.</li>
+        <li><b>ВП</b> отображает процент собранных вещей.</li>
+		<li><b>ВП</b> отображает прогресс сборки вещей.</li>
+        <li><b>П</b> нажимает «Собрал» у одной из вещей.</li>
+        <li><b>ВП</b> увеличивает на единицу количество собранных вещей, уменьшает на единицу количество несобранных, пересчитывает процент собранных вещей, увеличивает прогресс.</li>
+      </ol>
+      <p><strong>Сохранение списка вещей в файл в табличном формате</strong></p>
+      <ol id="c10">
+        <li><b>П</b> нажимает «Скачать список вещей».</li>
+        <li><b>ВП</b> сохраняет список вещей в файл с расширением xls.</li>
+      </ol>
+      
+      <p><strong>Изменение названия вещей в режиме редактирования</strong></p>
+      <ol id="c12">
+        <li><b>П</b> нажимает «Отобразить список вещей в режиме редактирования».</li>
+        <li><b>ВП</b> отображает список вещей.</li>
+        <li><b>П</b> корректирует название вещи.</li>
+        <li><b>П</b> нажимает «Сохранить».</li>
+        <li><b>ВП</b> сохраняет новое название вещи.</li>
+      </ol>
+	  
+	   <p><strong>Работа со списком достопримечательностей</strong></p>
+      <ol id="c1">
+        <li><b>П</b> переходит в раздел для работы со списком достопримечательностей.</li>
+        <li><b>ВП</b> отображает раздел для работы со списком достопримечательностей.</li>
+        <li><b>П</b> вводит/корректирует содержимое списка достопримечательностей.</li>
+        <li><b>П</b> нажимает «Сохранить».</li>
+        <li><b>ВП</b> сохраняет список достопримечательностей.</li>
+      </ol>
+      <p><strong>Просмотр списка достопримечательностей</strong></p>
+      <ol id="c4">
+        <li><b>П</b> нажимает «Отобразить список достопримечательностей».</li>
+        <li><b>ВП</b> отображает список достопримечательностей.</li>
+        <li><b>ВП</b> отображает для каждой достопримечательности её описание.</li>
+        <li>[<b>П</b> нажимает «Скрыть список достопримечательностей».]</li>
+        <li>[<b>ВП</b> скрывает список достопримечательностей.]</li>
+      </ol>
+	  <p><strong>Сохранение списка достопримечательностей в файл в табличном формате</strong></p>
+      <ol id="c10">
+        <li><b>П</b> нажимает «Скачать список достопримечательностей».</li>
+        <li><b>ВП</b> сохраняет список достопримечательностей в файл с расширением xls.</li>
+      </ol>
+	  
+	  <p><strong>Ввод описания достопримечательностей в режиме редактирования</strong></p>
+      <ol id="l12">
+        <li><b>П</b> нажимает «Отобразить список достопримечательностей в режиме редактирования».</li>
+        <li><b>ВП</b> отображает список достопримечательностей .</li>
+        <li><b>П</b> редактирует описание достопримечательности.</li>
+        <li><b>П</b> нажимает «Сохранить» описание термина.</li>
+        <li><b>ВП</b> корретирует список достопримечательностей в разделе для работы со списком достопримечательностей.</li>
+        <li><b>ВП</b> сохраняет список достопримечательностей.</li>
+        <li>[<b>П</b> нажимает «Скрыть список достопримечательностей».]</li>
+        <li>[<b>ВП</b> скрывает список достопримечательностей.]</li>
+      </ol>
+	  
+	  <p><strong>Работа с фотографиями</strong></p>
+      <ol id="c1">
+        <li><b>П</b> переходит в раздел для работы с фотографиями.</li>
+        <li><b>ВП</b> отображает раздел для работы с фотографиями.</li>
+        <li><b>П</b> нажимает «Выбрать файлы».</li>
+		<li><b>ВП</b> предлагает пользователю выбрать файлы.</li>
+        <li><b>П</b> выбирает файлы и нажимает нажимает «Открыть».</li>
+        <li><b>ВП</b> отображает выбранные фотографии.</li>
+      </ol>
+	  
+      <p><strong>Сохранение данных в файл</strong></p>
+      <ol id="c7">
+        <li><b>П</b> указывает имя файла.</li>
+        <li><b>П</b> нажимает «Скачать».</li>
+        <li><b>ВП</b> сохраняет данные в файл, выгружает файл.</li>
+      </ol>
+      <p><strong>Загрузка данных из файла</strong></p>
+      <ol id="c8">
+        <li><b>П</b> нажимает «Загрузить».</li>
+        <li><b>ВП</b> предлагает выбрать файл.</li>
+        <li><b>П</b> выбирает файл.</li>
+        <li><b>П</b> нажимает «Открыть».</li>
+        <li><b>ВП</b> запрашивает подтверждение на загрузку данных из файла.</li>
+        <li><b>П</b> нажимает «Ок».</li>
+        <li><b>ВП</b> загружает данные из файла.</li>
+      </ol>
+    </details>
+    <details>
+      <summary>Сценарии взаимодействия</summary>
+      <p><strong>Us</strong> &ndash; User.<br>
+         <strong>Br</strong> &ndash; Browser.<br>
+         <strong>DS</strong> &ndash; Data Storage.<br>
+
+      <p><strong>Вход в систему</strong></p>
+      <ol>
+        <li><b>Us</b> просит <b>Br</b> запустить web-приложение.</li>
+		<li><b>Br</b> отображает раздел для ввода названия поездки.</li>
+        <li><b>Br</b> отображает раздел для работы со списком вещей.</li>
+        <li><b>Br</b> отображает раздел для отображения списка вещей.</li>
+		<li><b>Br</b> отображает раздел для работы со списком достопримечательностей.</li>
+        <li><b>Br</b> отображает раздел для отображения списка достопримечательностей.</li>
+        <li><b>Br</b> отображает раздел для работы с фотографиями.</li>
+        <li><b>Br</b> просит <b>DS</b> предоставить название поездки, список вещей и список достопримечательностей.</li>
+        <li><b>Br</b> загружает название поездки, список вещей и список достопримечательностей.</li>
+      </ol>
+      
+	  <p><strong>Ввод названия поездки</strong></p>
+      <ol id="l1">
+        <li><b>Us</b> вводит название поездки.</li>
+        <li><b>Us</b> просит <b>Br</b> сохранить название поездки.</li>
+        <li><b>Br</b> просит <b>DS</b> сохранить название поездки.</li>
+      </ol>
+	  
+      <p><strong>Работа со списком вещей</strong></p>
+      <ol id="l1">
+        <li><b>Us</b> работает со списком вещей.</li>
+        <li><b>Us</b> просит <b>Br</b> сохранить список вещей.</li>
+        <li><b>Br</b> просит <b>DS</b> сохранить список вещей.</li>
+      </ol>
+	  
+	  <p><strong>Работа со списком достопримечательностей</strong></p>
+      <ol id="l1">
+        <li><b>Us</b> работает со списком достопримечательностей.</li>
+        <li><b>Us</b> просит <b>Br</b> сохранить список достопримечательностей.</li>
+        <li><b>Br</b> просит <b>DS</b> сохранить список достопримечательностей.</li>
+      </ol>
+      
+      <p><strong>Просмотр списка вещей</strong></p>
+      <ol id="l4">
+        <li><b>Us</b> просит <b>Br</b> отобразить список вещей.</li>
+        <li><b>Br</b> просит <b>DS</b> предоставить название поездки, список вещей и список собранных вещей.</li>
+        <li><b>Br</b> отображает список несобранных вещей.</li>
+        <li>[<b>Us</b> просит <b>Br</b> скрыть список вещей.]</li>
+        <li>[<b>Br</b> скрывает список вещей.]</li>
+      </ol>
+      
+      <p><strong>Установка у вещи отметки «Собрал»</strong></p>
+      <ol id="l5">
+        <li><b>Us</b> просит <b>Br</b> установить у вещи отметку «Собрал».</li>
+        <li><b>Br</b> просит <b>DS</b> предоставить список собранных вещей.</li>
+        <li><b>Br</b> добавляет в список собранных вещей новую вещь.</li>
+        <li><b>Br</b> просит <b>DS</b> сохранить список собранных вещей.</li>
+        <li><b>Br</b> скрывает собранную вещь из отображаемого на экране списка вещей.</li>
+      </ol>
+      
+      <p><strong>Сброс отметки «Собрал» со всех вещей</strong></p>
+      <ol id="l6">
+        <li><b>Us</b> просит <b>Br</b> сбросить отметку «Собрал» у всех вещей.</li>
+        <li><b>Br</b> просит <b>Us</b> подтвердить операцию.</li>
+        <li><b>Us</b> подтверждает операцию.</li>
+        <li><b>Br</b> просит <b>DS</b> сохранить пустой список собранных вещей.</li>
+        <li><b>Br</b> отображает полный список вещей.</li>
+      </ol>
+      
+      <p><strong>Просмотр статистики</strong></p>
+      <ol id="l9">
+        <li><b>Us</b> просит <b>Br</b> отобразить список вещей.</li>
+        <li><b>Br</b> выполняет запрошенное действие, рассчитывает и отображает статистику.</li>
+        <li><b>Us</b> просит <b>Br</b> установить у вещи отметку «Собрал».</li>
+        <li><b>Br</b> выполняет запрошенное действие и обновляет статистику.</li>
+        <li><b>Us</b> просит <b>Br</b> сбросить отметку «Собрал» со всех вещей.</li>
+        <li><b>Br</b> выполняет запрошенное действие, рассчитывает и отображает статистику.</li>
+      </ol>
+      
+      <p><strong>Сохранение списка вещей в файл в табличном формате</strong></p>
+      <ol id="l10">
+        <li><b>Us</b> просит <b>Br</b> сохранить список вещей в файл в табличном формате.</li>
+        <li><b>Br</b> генерирует имя файла.</li>
+        <li><b>Br</b> помещает данные в файл.</li>
+        <li><b>Br</b> сохраняет файл в папку "Загрузки".</li>
+      </ol>
+      
+      <p><strong>Изменение названия вещей в режиме редактирования</strong></p>
+      <ol id="l12">
+        <li><b>Us</b> просит <b>Br</b> отобразить список вещей в режиме редактирования.</li>
+        <li><b>Br</b> просит <b>DS</b> предоставить название поездки, список вещей и список собранных вещей.</li>
+        <li><b>Br</b> отображает список несобранных вещей.</li>
+        <li><b>Us</b> редактирует название вещи.</li>
+        <li><b>Us</b> просит <b>Br</b> сохранить название вещи.</li>
+        <li><b>Br</b> корретирует список вещей в разделе для работы со списком вещей.</li>
+        <li><b>Br</b> просит <b>DS</b> сохранить список вещей.</li>
+        <li>[<b>Us</b> просит <b>Br</b> скрыть список вещей.]</li>
+        <li>[<b>Br</b> скрывает список вещей.]</li>
+      </ol>
+	  
+	  <p><strong>Просмотр списка достопримечательностей</strong></p>
+      <ol id="l4">
+        <li><b>Us</b> просит <b>Br</b> отобразить список достопримечательностей.</li>
+        <li><b>Br</b> просит <b>DS</b> предоставить название поездки и список достопримечательностей.</li>
+        <li><b>Br</b> отображает список достопримечательностей.</li>
+        <li>[<b>Us</b> просит <b>Br</b> скрыть список достопримечательностей.]</li>
+        <li>[<b>Br</b> скрывает список достопримечательностей.]</li>
+      </ol>
+	  
+	  <p><strong>Сохранение списка достопримечательностей в файл в табличном формате</strong></p>
+      <ol id="l10">
+        <li><b>Us</b> просит <b>Br</b> сохранить список достопримечательностей в файл в табличном формате.</li>
+        <li><b>Br</b> генерирует имя файла.</li>
+        <li><b>Br</b> помещает данные в файл.</li>
+        <li><b>Br</b> сохраняет файл в папку "Загрузки".</li>
+      </ol>
+      
+      
+      <p><strong>Ввод описания достопримечательностей в режиме редактирования</strong></p>
+      <ol id="l12">
+        <li><b>Us</b> просит <b>Br</b> отобразить список достопримечательностей в режиме редактирования.</li>
+        <li><b>Br</b> просит <b>DS</b> предоставить название поездки и список достопримечательностей.</li>
+        <li><b>Br</b> отображает список достопримечательностей.</li>
+        <li><b>Us</b> редактирует описание достопримечательности.</li>
+        <li><b>Us</b> просит <b>Br</b> сохранить описание достопримечательности.</li>
+        <li><b>Br</b> корретирует список достопримечательностей в разделе для работы со списком достопримечательностей.</li>
+        <li><b>Br</b> просит <b>DS</b> сохранить список достопримечательностей.</li>
+        <li>[<b>Us</b> просит <b>Br</b> скрыть список достопримечательностей.]</li>
+        <li>[<b>Br</b> скрывает список достопримечательностей.]</li>
+      </ol>
+	  
+	  <p><strong>Работа с фотографиями</strong></p>
+      <ol id="l10">
+        <li><b>Us</b> просит <b>Br</b> дать возможность загрузить фотографии с ПК.</li>
+        <li><b>Br</b> предлагает выбрать фотографии.</li>
+        <li><b>Us</b> Выбирает фотографии.</li>
+        <li><b>Br</b> Отображает фотографии.</li>
+      </ol>
+      
+      <p><strong>Сохранение данных в файл</strong></p>
+      <ol id="l9">
+        <li><b>Us</b> просит <b>Br</b> сохранить данные в файл.</li>
+        <li><b>Br</b> подготавливает информацию для сохранения.</li>
+        <li><b>Br</b> генерит имя файла.</li>
+        <li><b>Br</b> помещает данные в файл.</li>
+        <li><b>Br</b> просит <b>Us</b> откорректировать имя файла или принять предложенное.</li>
+        <li><b>Br</b> просит <b>Us</b> выбрать папку для сохранения файла.</li>
+        <li><b>Us</b> корректирует имя файла или принимает предложенное.</li>
+        <li><b>Us</b> выбирает папку.</li>
+        <li><b>Br</b> сохраняет файл в выбранную папку.</li>
+      </ol>
+      
+      <p><strong>Загрузка данных из файла</strong></p>
+      <ol id="l10">
+        <li><b>Us</b> просит <b>Br</b> загрузить данные из файла.</li>
+        <li><b>Br</b> просит <b>Us</b> выбрать файл.</li>
+        <li><b>Us</b> выбирает файл с выгруженными ранее данными.</li>
+        <li><b>Br</b> удаляет текущие данные из хранилища данных.</li>
+        <li><b>Br</b> получает данные из файла.</li>
+        <li><b>Br</b> сохраняет данные из файла в хранилище данных.</li>
+        <li><b>Br</b> загружает в раздел для работы со словарем терминов словарь терминов из хранилища данных.</li>
+      </ol>
+      
+    </details>
+    <details>
+      <summary>Сценарии выполнения</summary>
+      
+<pre>
+  <strong>start()</strong>
+    loadThingList()
+    hideThingListForTrip()
+    loadPlaceList()
+    hidePlaceListForTrip()
+    setFileName()</pre>
+	
+<pre id="p1">
+  <strong>button.saveTripName.onclick</strong>
+    saveTripName()</pre>
+
+<pre id="p2">
+  <strong>button.saveThingList.onclick</strong>
+    saveThingList()</pre>
+
+<pre id="p3">
+  <strong>button.showThingListForTrip.onclick  </strong>
+    showThingListForTrip(isWithEdit = false)
+    refreshStat(thingAmo, thingCollectAmo)
+    
+  <strong>button.hideThingListForTrip.onclick  </strong>
+    hideThingListForTrip()</pre>
+	
+<pre id="p4">
+  <strong>button.collectThing.onclick  </strong>
+    collectThing(thing)
+    refreshStat(undefined, undefined)</pre>
+	
+<pre id="p5">
+  <strong>button.clearCollectThingList.onclick</strong>
+    clearCollectThingList()
+    showThingListForTrip(isWithEdit = false)
+    refreshStat(thingAmo, thingCollectAmo)</pre>
+	  
+<pre id="p6">
+  <strong>button.downloadThingListXLS.onclick</strong>
+    downloadThingListXLS()  </pre>
+	
+<pre id="p7">
+  <strong>button.showThingListForTripWithEdit.onclick  </strong>
+    showThingListForTrip(isWithEdit = true)
+    refreshStat(thingAmo, thingCollectAmo)
+      
+  <strong>button.buttonSaveDescriptionOnClick.onclick</strong>
+    saveDescription(thing, description)
+    getThingList()
+    setThingList()
+    saveThingList()</pre>
+	
+<pre id="p8">
+  <strong>button.savePlaceList.onclick</strong>
+    savePlaceList()</pre>
+
+<pre id="p9">
+  <strong>button.showPlaceListForTrip.onclick  </strong>
+    showPlaceListForTrip(isWithEdit = false)
+    
+  <strong>button.hidePlaceListForTrip.onclick  </strong>
+    hidePlaceListForTrip()</pre>
+	
+<pre id="p10">
+  <strong>button.downloadPlaceListXLS.onclick</strong>
+    downloadPlaceListXLS()  </pre>
+	
+<pre id="p11">
+  <strong>button.showPlaceListForTripWithEdit.onclick  </strong>
+    showPlaceListForTrip(isWithEdit = true)
+      
+  <strong>button.buttonSaveDescrOnClick.onclick</strong>
+    saveDescr(place, description)
+    getPlaceList()
+    setPlaceList()
+    savePlaceList()</pre>
+
+<pre id="p12">
+  <strong>button.addDescr.onclick</strong>
+    addDescriptionsToPlaceList()  </pre>
+
+<pre id="p13">
+  <strong>button.addDescr.onclick</strong>
+    addDescriptionsToPlaceList()  </pre>
+	
+<pre id="p14">
+  <strong>button.download.onclick</strong>
+    downloadLocalStorage()  </pre>
+	
+<pre id="p15">
+  <strong>button.upload.onclick</strong>
+    uploadLocalStorage(start)  
+  <strong>start()</strong></pre>
+      
+    </details>
+    <details>/-->
+		<summary>Реализация</summary>
+		  
+		<hr>
+		<label class="title">Название поездки:</label>
+		<br>
+		<input id="scopeName" type="text">
+		<br>
+		<button id="saveTripName">Сохранить</button>
+		<br>
+		<hr>
+		  
+		<label class="title" >Список вещей:</label>
+		<br>
+		<textarea id="thingList"></textarea>
+		<br>
+		<button id="saveThingList">Сохранить</button>
+		<br>
+		<hr>
+		  
+		<label class="title" >Список вещей для поездки:</label>
+		<br>
+		<button id="showThingListForTrip">Отобразить список вещей</button>
+		<button id="clearCollectThingList">Снять отметку «Собрал» со всех вещей</button>
+		<button id="hideThingListForTrip">Скрыть список вещей</button>
+		<button id="showThingListForTripWithEdit">Отобразить список вещей в режиме редактирования</button>
+		<section id="thingListToCollect">
+		</section>
+		<hr>
+	  
+
+		<label class="title" >Список достопримечательностей:</label>
+		<br>
+		<label><small>Нечетные строки &ndash; достопримечательности. Четные строки &ndash; описания.</small></label>
+		<br>
+		<textarea id="placeList"></textarea>
+		<br>
+		<button id="savePlaceList">Сохранить</button>
+		<button id="addDescr">Добавить пустые описания</button>
+		<br>
+		<hr>
+		
+		<label class="title">Список достопримечательностей к посещению:</label>
+		<br>
+		<button id="showPlaceListForTrip">Отобразить список достопримечательностей</button>
+		<button id="hidePlaceListForTrip">Скрыть список достопримечательностей</button>
+		<button id="showPlaceListForTripWithEdit">Отобразить список достопримечательностей в режиме редактирования</button>
+		<br> <br>
+		<section id="placeListForTrip">
+		</section>
+		
+		<hr>
+		<label class="title" >Фотографии</label>
+		<br><br>
+		<input type="file" multiple accept="image/*" onchange="handleFiles(this.files)"><br>
+		<br>
+		<section id="photoes">
+		</section>
+		<hr>
+      
+		<label>Имя файла:</label>
+		<br>
+		<input id="fileName" type="text">
+		<br>
+		<button id="download">Скачать</button>
+		<button id="upload">Загрузить</button>
+		<hr>
+    </details>
+	
+	
+    <template id="thingListToCollectTemplate">
+      <p>Количество вещей: <output id="thingAmo">0</output>.<br> 
+         Количество собранных вещей: <output id="thingCollectAmo">0</output>.<br>
+         Процент собранных вещей: <output id="thingCollectPerc">0</output>%.<br>
+         Прогресс сборки: <meter id="thingCollectPercMeter" min="0" max="100" low="30" high="70" optimum="80"></meter><br>
+         Осталось собрать: <mark><output id="thingNotCollectAmo">0</output></mark>.<br>        
+      </p>
+	  
+      <table id="thingListToCollectTable" >
+        <tr>
+          <th>Вещь</th>
+          <th class="control">Собрал</th>
+          <th id="thSaveDescription">Сохранить</th>
+        </tr>
+        <tr id="trThing">
+          <td id="tdThing"></td>
+          <td class="control"><button id="btnCollect" title="Установка отметки «Изучил»">Собрал</button></td>
+          <td id="tdSaveDescription" class="control"><button id="btnSaveDescription" title="Сохранение описания термина">Сохранить</button></td>
+        </tr>
+      </table>
+	  
+      <br>
+      <button id="downloadThingListXLS">Скачать список вещей</button>
+	  
+    </template>
+	
+	<template id="placeListForTripTemplate">
+      <table id="placeListForTripTable" >
+        <tr>
+          <th>Название</th>
+		  <th>Описание</th>
+
+          <th id="thSaveDescr">Сохранить</th>
+        </tr>
+        <tr id="trPlace">
+		  <td id="tdName"></td>
+          <td id="tdDescr"></td>
+
+          <td id="tdSaveDescr" class="control"><button id="btnSaveDescr" title="Сохранение описания термина">Сохранить</button></td>
+        </tr>
+      </table>
+	  
+      <br>
+      <button id="downloadPlaceListXLS">Скачать список достопримечательностей</button>
+	  
+    </template>
+	
+	
+	<details>
+      <summary>Результаты проверки</summary>
+      <p>В проектном решении не реализовано сохрание изобажений, выбранных пользователем.</p>
+    </details>
+  </body>
+</html>
